@@ -1,0 +1,8 @@
+#!/bin/sh
+RESOURCE=$(terraform state list -id=highscores)
+if [ -z "$RESOURCE" ]; then
+  fail-message "The postgres_database resource called highscores was not created"
+  exit 1
+fi
+
+exit 0

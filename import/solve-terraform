@@ -1,0 +1,2 @@
+#!/bin/bash
+terraform import postgresql_database.backup backup

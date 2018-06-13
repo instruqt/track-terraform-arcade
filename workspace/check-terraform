@@ -1,0 +1,8 @@
+#!/bin/bash
+WORKSPACE=$(terraform workspace show)
+if [ "$WORKSPACE" != "prod" ]; then
+  fail-message "The current workspace is not prod"
+  exit 1
+fi
+
+exit 0

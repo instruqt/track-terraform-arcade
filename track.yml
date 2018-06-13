@@ -1,0 +1,120 @@
+id: gn55kw4m6g
+type: track
+version: 0.0.1
+slug: terraform-arcade
+icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/terraform.png
+title: Terraform arcade
+teaser: A short description of the track.
+description: |-
+  A long description of the track.
+
+  You can use any GitHub flavoured markdown.
+tags: []
+challenges:
+- id: wxqqp4239d
+  slug: apply
+  title: apply
+  teaser: Initialize and apply
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/apply.html
+  difficulty: basic
+  assignment: Initialize terraform and apply the changes.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: vzoore7n4d
+  slug: import
+  title: import
+  teaser: Import existing resources
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/import.html
+  difficulty: basic
+  assignment: We have an existing schema in the database. Import it.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: wbllae98bv
+  slug: workspace
+  title: workspace
+  teaser: Create a workspaces with its own state
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/workspace/index.html
+  difficulty: basic
+  assignment: We have a dev workspace. Now create a prod workspace.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: w9nn4lbxkd
+  slug: taint
+  title: taint
+  teaser: Mark existing resources for destruction
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/taint.html
+  difficulty: basic
+  assignment: We need to recreate a resource, so taint it.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: wyooq36e8d
+  slug: state
+  title: state
+  teaser: Manipulate the state
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/state/index.html
+  difficulty: basic
+  assignment: Refactor the code. Rename an existing resource so it matches the code.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: vo99zqn3zv
+  slug: validate
+  title: validate
+  teaser: Validate terraform code
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/validate.html
+  difficulty: basic
+  assignment: |-
+    There is something broken in the terraform code.
+
+    Find the problem and fix it.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: wl22zal9pd
+  slug: refresh
+  title: refresh
+  teaser: Find drift in state
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/refresh.html
+  difficulty: basic
+  assignment: |-
+    Things have changed in the running environment.
+
+    Find out what has changed.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+developers:
+- erik@instruqt.com
+published: false

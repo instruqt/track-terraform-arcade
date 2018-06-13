@@ -1,0 +1,8 @@
+#!/bin/bash
+RESOURCE=$(terraform state list -id=backup)
+if [ -z "$RESOURCE" ]; then
+  fail-message "The postgres_database resource called backup was not imported"
+  exit 1
+fi
+
+exit 0
