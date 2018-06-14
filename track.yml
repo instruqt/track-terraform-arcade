@@ -55,6 +55,40 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
+- id: veeez89jqv
+  slug: adding-resources
+  title: Adding resources
+  teaser: A short description of the challenge.
+  notes:
+  - type: text
+    contents: Replace this text with your own text
+  difficulty: basic
+  assignment: |-
+    The assignment the participant needs to complete in order to proceed.
+
+    You can use any GitHub flavoured markdown.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
+- id: v344q8azjd
+  slug: planning-ahead
+  title: Planning ahead
+  teaser: A short description of the challenge.
+  notes:
+  - type: text
+    contents: Replace this text with your own text
+  difficulty: basic
+  assignment: |-
+    The assignment the participant needs to complete in order to proceed.
+
+    You can use any GitHub flavoured markdown.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
 - id: w9nn4lbxkd
   slug: taint
   title: Tainting resources

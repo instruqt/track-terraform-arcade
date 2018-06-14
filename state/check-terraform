@@ -1,12 +1,17 @@
 #!/bin/bash
 
 # Check if the new resource exists.
-
-OLD=$(cat /tmp/id)
-NEW=$(terraform state show tls_self_signed_cert.self-signed | grep -E "^id " | awk -F " = " '{print $2}')
-if [ "$OLD" != "$NEW" ]; then
+CHANGE=$(terraform plan -target tls_self_signed_cert.certificate -detailed-exitcode > /dev/null 2>&1 ; echo $?)
+if [ $CHANGE != 0 ]; then
   fail-message "The resource was not moved in the terraform state, but replaced"
   exit 1
 fi
+
+# OLD=$(cat /tmp/id)
+# NEW=$(terraform state show tls_self_signed_cert.self-signed | grep -E "^id " | awk -F " = " '{print $2}')
+# if [ "$OLD" != "$NEW" ]; then
+#   fail-message "The resource was not moved in the terraform state, but replaced"
+#   exit 1
+# fi
 
 exit 0

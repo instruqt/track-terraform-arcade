@@ -1,5 +1,5 @@
 #!/bin/bash
-
+terraform untaint tls_self_signed_cert.certificate
 terraform state show tls_self_signed_cert.certificate | grep -E "^id " | awk -F "= " '{print $2}' > /tmp/id
 
 exit 0
