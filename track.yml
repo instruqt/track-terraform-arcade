@@ -10,7 +10,7 @@ tags: []
 challenges:
 - id: wbllae98bv
   slug: workspace
-  title: workspace
+  title: Switching workspaces
   teaser: Create a workspaces with its own state
   notes:
   - type: text
@@ -27,14 +27,13 @@ challenges:
     hostname: terraform
 - id: wxqqp4239d
   slug: apply
-  title: apply
+  title: Creating infrastructure
   teaser: Initialize and apply
   notes:
   - type: text
     contents: https://www.terraform.io/docs/commands/apply.html
   difficulty: basic
-  assignment: |-
-    Initialize terraform and apply the changes to the prod workspace.
+  assignment: Initialize terraform and apply the changes to the prod workspace.
   timelimit: 300
   tabs:
   - type: terminal
@@ -42,7 +41,7 @@ challenges:
     hostname: terraform
 - id: vzoore7n4d
   slug: import
-  title: import
+  title: Importing resources
   teaser: Import existing resources
   notes:
   - type: text
@@ -58,14 +57,14 @@ challenges:
     hostname: terraform
 - id: w9nn4lbxkd
   slug: taint
-  title: taint
+  title: Tainting resources
   teaser: Mark existing resources for destruction
   notes:
   - type: text
     contents: https://www.terraform.io/docs/commands/taint.html
   difficulty: basic
-  assignment: |-
-    We need a new certificate, mark the resource as tained, so it will be recreated.
+  assignment: We need a new certificate, mark the resource as tained, so it will be
+    recreated.
   timelimit: 300
   tabs:
   - type: terminal
@@ -73,7 +72,7 @@ challenges:
     hostname: terraform
 - id: wyooq36e8d
   slug: state
-  title: state
+  title: Manipulating state
   teaser: Manipulate the state
   notes:
   - type: text
@@ -90,7 +89,7 @@ challenges:
     hostname: terraform
 - id: vo99zqn3zv
   slug: validate
-  title: validate
+  title: Validating code
   teaser: Validate terraform code
   notes:
   - type: text
