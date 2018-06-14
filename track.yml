@@ -138,23 +138,6 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: wl22zal9pd
-  slug: refresh
-  title: refresh
-  teaser: Find drift in state
-  notes:
-  - type: text
-    contents: https://www.terraform.io/docs/commands/refresh.html
-  difficulty: basic
-  assignment: |-
-    Things have changed in the running environment.
-
-    Find out what has changed.
-  timelimit: 300
-  tabs:
-  - type: terminal
-    title: Shell
-    hostname: terraform
 developers:
 - erik@instruqt.com
 published: false
