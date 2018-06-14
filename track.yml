@@ -16,7 +16,10 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/workspace/index.html
   difficulty: basic
-  assignment: We have a dev workspace. Now create a prod workspace.
+  assignment: |-
+    We are currently working in the dev workspace, but are ready to go to prod.
+
+    Create a prod workspace and switch to it.
   timelimit: 300
   tabs:
   - type: terminal
@@ -30,7 +33,8 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/apply.html
   difficulty: basic
-  assignment: Initialize terraform and apply the changes.
+  assignment: |-
+    Initialize terraform and apply the changes to the prod workspace.
   timelimit: 300
   tabs:
   - type: terminal
@@ -46,7 +50,7 @@ challenges:
   difficulty: basic
   assignment: |-
     There is an additional database named *backup* in the PostgreSQL instance.
-    Import it into the state.
+    Import it into the state as *backup*.
   timelimit: 300
   tabs:
   - type: terminal
@@ -60,7 +64,8 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/taint.html
   difficulty: basic
-  assignment: Mark the resource named certificate as tained, so it will be recreated.
+  assignment: |-
+    We need a new certificate, mark the resource as tained, so it will be recreated.
   timelimit: 300
   tabs:
   - type: terminal
@@ -76,6 +81,7 @@ challenges:
   difficulty: basic
   assignment: |-
     Rename the resource named *certificate* to *self-signed*.
+
     Then make sure this *move* is reflected in the state.
   timelimit: 300
   tabs:
@@ -93,7 +99,7 @@ challenges:
   assignment: |-
     The code changes don't validate and can't be applied.
 
-    Find the problems and fix them.
+    Find the problems and fix them so they pass validation.
   timelimit: 300
   tabs:
   - type: terminal
