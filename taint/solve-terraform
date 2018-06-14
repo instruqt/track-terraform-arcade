@@ -1,0 +1,4 @@
+#!/bin/bash
+terraform taint tls_self_signed_cert.certificate
+
+exit 0

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Check if the resources need to be replaced.
+CHANGE=$(terraform plan -target tls_self_signed_cert.certificate -detailed-exitcode > /dev/null 2>&1 ; echo $?)
+if [ $CHANGE != 2 ]; then
+  fail-message "The certificate resource was not tained"
+  exit 1
+fi
+
+exit 0

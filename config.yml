@@ -4,7 +4,7 @@ configuration:
   - Image: gcr.io/instruqt/terraform:arcade
     Name: terraform
     Resources:
-      Memory: 64
+      Memory: 128
     Shell: /bin/bash
   - Image: postgres:9.6-alpine
     Name: postgres

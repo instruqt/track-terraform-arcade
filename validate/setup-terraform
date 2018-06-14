@@ -1,0 +1,98 @@
+#!/bin/bash
+rm -rf /root/.terraform*
+rm -rf /root/terraform*
+rm *.tf
+
+cat <<EOF > provider.tf
+provider "google" {
+  credentials = "\${file("account.json")}"
+  project     = "my-gce-project-id"
+  region      = "us-central1"
+}
+EOF
+
+cat <<EOF > project.tf
+resource "google_project" "my_project" {
+  name = "My Project"
+  project_id = "your-project-id"
+  org_id     = "1234567"
+}
+EOF
+
+cat <<EOF > gke.tf
+resource "google_container_node_pool" "np" {
+  name       = "my-node-pool"
+  zone       = "us-central1-a"
+  cluster    = "\${google_container_cluster.primary.name}"
+  node_count = 1
+
+  node_config {
+    preemptible  = true
+    machine_type = "n1-standard-1"
+
+    oauth_scopes = [
+      "compute-rw",
+      "storage-ro",
+      "logging-write",
+      "monitoring",
+    ]
+  }
+}
+
+resource "google_container_node_pool" "regional-np" {
+  name       = "my-node-pool"
+  region     = "us-central1"
+  cluster    = "\${google_container_cluster.primary.name}"
+  node_count = 1
+}
+
+resource "google_compute_global_address" "arcade" {
+  name       = "arcade"
+}
+
+
+resource "google_dns_record_set" "domain" {
+  name = "\${var.domain}.arcade.com."
+  type = "A"
+  ttl  = 300
+
+  managed_zone = "arcade-com"
+
+  rrdatas = ["\${google_compute_global_address.arcade.address}"]
+}
+
+resource "google_container_cluster" "primary" {
+  name               = "marcellus-wallace"
+  zone               = "us-central1-a"
+  initial_node_count = 3
+
+  additional_zones = [
+    "us-central1-b",
+    "us-central1-c",
+  ]
+
+  master_auth {
+    username = "\"${substr(google_dns_record_set.domain.name, \""0"\", length(google_dns_record_set.domain.name) + 1)}\""
+    password = "adoy.rm"
+  }
+
+  node_config {
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/compute",
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring",
+    ]
+
+    labels {
+      foo = "bar"
+    }
+
+    tags = ["foo", "bar"]
+  }
+}
+EOF
+
+terraform init
+
+exit 0

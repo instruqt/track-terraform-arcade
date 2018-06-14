@@ -1,0 +1,5 @@
+#!/bin/bash
+sed -i 's/certificate/self-signed/g' certificate.tf
+terraform state mv tls_self_signed_cert.certificate tls_self_signed_cert.self-signed
+
+exit 0

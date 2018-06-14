@@ -4,13 +4,24 @@ version: 0.0.1
 slug: terraform-arcade
 icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/terraform.png
 title: Terraform arcade
-teaser: A short description of the track.
-description: |-
-  A long description of the track.
-
-  You can use any GitHub flavoured markdown.
+teaser: Do you know Terraform in and out?
+description: Do you know Terraform in and out?
 tags: []
 challenges:
+- id: wbllae98bv
+  slug: workspace
+  title: workspace
+  teaser: Create a workspaces with its own state
+  notes:
+  - type: text
+    contents: https://www.terraform.io/docs/commands/workspace/index.html
+  difficulty: basic
+  assignment: We have a dev workspace. Now create a prod workspace.
+  timelimit: 300
+  tabs:
+  - type: terminal
+    title: Shell
+    hostname: terraform
 - id: wxqqp4239d
   slug: apply
   title: apply
@@ -33,21 +44,9 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/import.html
   difficulty: basic
-  assignment: We have an existing schema in the database. Import it.
-  timelimit: 300
-  tabs:
-  - type: terminal
-    title: Shell
-    hostname: terraform
-- id: wbllae98bv
-  slug: workspace
-  title: workspace
-  teaser: Create a workspaces with its own state
-  notes:
-  - type: text
-    contents: https://www.terraform.io/docs/commands/workspace/index.html
-  difficulty: basic
-  assignment: We have a dev workspace. Now create a prod workspace.
+  assignment: |-
+    There is an additional database named *backup* in the PostgreSQL instance.
+    Import it into the state.
   timelimit: 300
   tabs:
   - type: terminal
@@ -61,7 +60,7 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/taint.html
   difficulty: basic
-  assignment: We need to recreate a resource, so taint it.
+  assignment: Mark the resource named certificate as tained, so it will be recreated.
   timelimit: 300
   tabs:
   - type: terminal
@@ -75,7 +74,9 @@ challenges:
   - type: text
     contents: https://www.terraform.io/docs/commands/state/index.html
   difficulty: basic
-  assignment: Refactor the code. Rename an existing resource so it matches the code.
+  assignment: |-
+    Rename the resource named *certificate* to *self-signed*.
+    Then make sure this *move* is reflected in the state.
   timelimit: 300
   tabs:
   - type: terminal
@@ -90,9 +91,9 @@ challenges:
     contents: https://www.terraform.io/docs/commands/validate.html
   difficulty: basic
   assignment: |-
-    There is something broken in the terraform code.
+    The code changes don't validate and can't be applied.
 
-    Find the problem and fix it.
+    Find the problems and fix them.
   timelimit: 300
   tabs:
   - type: terminal

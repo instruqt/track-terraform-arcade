@@ -1,0 +1,5 @@
+#!/bin/bash
+dropdb -U postgres highscores
+dropdb -U postgres backup
+
+exit 0

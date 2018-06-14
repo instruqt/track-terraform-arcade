@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -rf /root/.terraform*
+rm -rf /root/terraform*
+rm /root/*.tf
+
+exit 0

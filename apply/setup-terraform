@@ -17,7 +17,7 @@ resource "postgresql_database" "highscores" {
 }
 EOF
 
-# Set up dev workspace.
-terraform workspace new dev
+# Initialize terraform.
+terraform init
 
 exit 0
