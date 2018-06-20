@@ -1,0 +1,20 @@
+#!/bin/bash
+# Create resources.
+cat <<EOF > provider.tf
+provider "postgresql" {
+  host            = "postgres"
+  port            = 5432
+  username        = "postgres"
+  password        = "notsecure"
+  sslmode         = "disable"
+  connect_timeout = 15
+}
+EOF
+
+cat <<EOF > database.tf
+resource "postgresql_database" "highscores" {
+  name = "highscores"
+}
+EOF
+
+exit 0

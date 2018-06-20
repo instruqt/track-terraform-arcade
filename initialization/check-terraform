@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d "$HOME/.terraform.d" ]; then
+  fail-message "Terraform has not been initialized"
+  exit 1
+fi
+
+exit 0
