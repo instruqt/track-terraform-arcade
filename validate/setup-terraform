@@ -36,7 +36,7 @@ EOF
 
 cat <<EOF > project.tf
 resource "google_project" "my_project" {
-  name = "My Project"
+  name       = "My Project"
   project_id = "your-project-id"
   org_id     = "1234567"
 }
@@ -63,9 +63,6 @@ resource "google_container_node_pool" "np" {
   }
 }
 
-EOF
-
-cat <<EOF >> gke.tf
 resource "google_container_node_pool" "regional-np" {
   name       = "my-node-pool"
   region     = "us-central1"
@@ -87,9 +84,6 @@ resource "google_dns_record_set" "domain" {
   rrdatas = ["\${google_compute_global_address.arcade.address}"]
 }
 
-EOF
-
-cat <<EOF >> gke.tf
 resource "google_container_cluster" "primary" {
   name               = "marcellus-wallace"
   zone               = "us-central1-a"
