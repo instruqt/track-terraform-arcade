@@ -98,6 +98,10 @@ challenges:
         name    = "arcade"
       }
       ```
+  - type: text
+    contents: Every resource configuration block specifies the *type* of the resource
+      (e.g. "consul_node"), its *name* in terraform (e.g. "arcade"), and a list of
+      properties specific to that resources (e.g. "address" and "name").
   difficulty: basic
   assignment: Create a *postgresql_role* that enables you to login with name *arcade*
     and password *highscore*.

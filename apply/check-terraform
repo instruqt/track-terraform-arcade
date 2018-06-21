@@ -1,4 +1,10 @@
 #!/bin/sh
+
+if [ ! -f "$HOME/terraform.tfstate" ]; then
+  fail-message "No terraform state found, did you run apply?"
+  exit 1
+fi
+
 RESOURCE=$(terraform state list -id=highscores)
 if [ -z "$RESOURCE" ]; then
   fail-message "The postgres_database resource called highscores was not created"

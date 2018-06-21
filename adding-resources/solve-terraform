@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cat <<EOF >> database.tf
+
+resource "postgresql_role" "arcade" {
+  name     = "arcade"
+  password = "highscore"
+}
+EOF
+
+terraform apply -auto-approve

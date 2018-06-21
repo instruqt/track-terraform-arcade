@@ -1,4 +1,6 @@
 #!/bin/bash
+rm *.tf
+
 # Create resources.
 cat <<EOF > provider.tf
 provider "postgresql" {

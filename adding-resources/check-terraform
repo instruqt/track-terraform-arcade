@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ ! -f "$HOME/terraform.tfstate" ]; then
+  fail-message "No terraform state found, did you run apply?"
+  exit 1
+fi
+
+RESOURCE_ID=$(terraform state list | grep postgresql_role)
+if [ -z "$RESOURCE_ID" ]; then
+  fail-message "No postgres_role resource was created"
+  exit 1
+fi
+
+RESOURCE=$(terraform state show $RESOURCE_ID)
+USERNAME=$(echo "$RESOURCE" | grep -e '^name' | awk '{print $3}')
+if [ "$USERNAME" != "arcade" ]; then
+  fail-message "Username is not arcade"
+  exit 1
+fi
+
+PASSWORD=$(echo "$RESOURCE" | grep -e '^password' | awk '{print $3}')
+if [ "$PASSWORD" != "highscore" ]; then
+  fail-message "Password is not highscore"
+  exit 1
+fi
+
+exit 0
