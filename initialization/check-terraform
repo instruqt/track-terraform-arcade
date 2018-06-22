@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ ! -d "$HOME/.terraform.d" ]; then
+  fail-message "Terraform has not been initialized"
+  exit 1
+fi
+
+if [ ! -d "$HOME/.terraform/plugins/linux_amd64" ]; then
+  fail-message "Terraform has not been initialized properly, plugins not found"
+  exit 1
+fi
+
+exit 0

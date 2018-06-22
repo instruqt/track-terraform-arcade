@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ ! -f "$HOME/plan.out" ]; then
+  fail-message "No terraform plan found"
+  exit 1
+fi
+
+if ! terraform show plan.out; then
+  fail-message "plan.out is not a valid terraform plan"
+  exit 1
+fi
+
+if ! terraform show -no-color plan.out | grep '+ postgresql_database.highscores'; then
+  fail-message "plan.out is not complete, postgresql_database.highscores is missing"
+  exit 1
+fi
+
+exit 0

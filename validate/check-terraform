@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if ! terraform validate; then
+  fail-message "There are still validation errors"
+  exit 1
+fi
+
+if ! terraform plan -no-color >/dev/null 2>&1; then
+  fail-message "Validation passed, but terraform plan is still unhappy :'("
+  exit 1
+fi
+
+PLAN=$(terraform plan -no-color)
+CHANGES=$(echo "$PLAN" | grep -e '^Plan: ' || echo "$PLAN" | grep -e '^No changes. Infrastructure is up-to-date.')
+if [ "$CHANGES" != "Plan: 6 to add, 0 to change, 0 to destroy." ] ; then
+  fail-message "Expected 6 resources to be created, but got: $CHANGES"
+  exit 1
+fi

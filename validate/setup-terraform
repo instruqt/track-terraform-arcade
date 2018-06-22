@@ -3,17 +3,40 @@ rm -rf /root/.terraform*
 rm -rf /root/terraform*
 rm *.tf
 
+cat <<EOF > variables.tf
+variable "regions" {
+  type = list
+  default = [
+    "europe-west1-b",
+    "europe-west1-c",
+    "europe-west1-d",
+  ]
+}
+
+variable "default_region" {
+  default = "europe-west1-b"
+}
+EOF
+
 cat <<EOF > provider.tf
+provider "google" {
+  credentials = "\\\${file("account.json")}"
+  project     = "my-gce-project-id"
+  # use default region
+  region      = "\${var.regions}"
+}
+
 provider "google" {
   credentials = "\${file("account.json")}"
   project     = "my-gce-project-id"
-  region      = "us-central1"
+  # use default region
+  region      = "\${var.regions}"
 }
 EOF
 
 cat <<EOF > project.tf
 resource "google_project" "my_project" {
-  name = "My Project"
+  name       = "My Project"
   project_id = "your-project-id"
   org_id     = "1234567"
 }
@@ -21,6 +44,7 @@ EOF
 
 cat <<EOF > gke.tf
 resource "google_container_node_pool" "np" {
+  depends_on = ["\${google_project.my_project.project_id}"]
   name       = "my-node-pool"
   zone       = "us-central1-a"
   cluster    = "\${google_container_cluster.primary.name}"
@@ -50,7 +74,6 @@ resource "google_compute_global_address" "arcade" {
   name       = "arcade"
 }
 
-
 resource "google_dns_record_set" "domain" {
   name = "\${var.domain}.arcade.com."
   type = "A"
@@ -72,7 +95,7 @@ resource "google_container_cluster" "primary" {
   ]
 
   master_auth {
-    username = "\"${substr(google_dns_record_set.domain.name, \""0"\", length(google_dns_record_set.domain.name) + 1)}\""
+    username = "\${substr(google_dns_record_set.domain.name, [0], length(google_dns_record_set.domain.name) + 1)}"
     password = "adoy.rm"
   }
 
@@ -92,7 +115,5 @@ resource "google_container_cluster" "primary" {
   }
 }
 EOF
-
-terraform init
 
 exit 0
