@@ -1,4 +1,4 @@
-id: gn55kw4m6g
+id: gbobe4ndrxxh
 type: arcade
 version: 0.0.1
 slug: terraform-arcade
@@ -14,7 +14,7 @@ tags:
 - Terraform
 - arcade
 challenges:
-- id: d8eea5l66d
+- id: fcfjnzqfm3yx
   slug: initialization
   title: Initialization
   teaser: Initialization
@@ -43,7 +43,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: v344q8azjd
+- id: moatuzz1vnfa
   slug: planning-ahead
   title: Planning ahead
   teaser: Planning ahead
@@ -61,7 +61,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: wxqqp4239d
+- id: 7p5eix6nqvpv
   slug: apply
   title: Creating infrastructure
   teaser: Initialize and apply
@@ -78,7 +78,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: veeez89jqv
+- id: k8fttzc1jouw
   slug: adding-resources
   title: Add another resource
   teaser: Add another resource
@@ -110,7 +110,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: wbllae98bv
+- id: jgowxyy39kr5
   slug: workspace
   title: Switching workspaces
   teaser: Create a workspaces with its own state
@@ -137,7 +137,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: vzoore7n4d
+- id: 9vvamcvckzbd
   slug: import
   title: Importing resources
   teaser: Import existing resources
@@ -163,7 +163,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: w9nn4lbxkd
+- id: xokr1kvbrtgf
   slug: taint
   title: Tainting resources
   teaser: Mark existing resources for destruction
@@ -183,7 +183,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: wyooq36e8d
+- id: lciaifnoug3q
   slug: state
   title: Manipulating state
   teaser: Manipulate the state
@@ -203,7 +203,7 @@ challenges:
   - type: terminal
     title: Shell
     hostname: terraform
-- id: vo99zqn3zv
+- id: sxjxummc2kwm
   slug: validate
   title: Validating code
   teaser: Validate terraform code
@@ -225,5 +225,4 @@ challenges:
     hostname: terraform
 developers:
 - ade@instruqt.com
-- erik@instruqt.com
 published: false
