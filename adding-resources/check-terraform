@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! grep "postgresql_role" *.tf; then
+if ! grep -q "postgresql_role" *.tf; then
   fail-message "No postgresql_role found in the terraform config"
   exit 1
 fi

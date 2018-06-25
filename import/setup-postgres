@@ -1,2 +1,2 @@
 #!/bin/bash
-createdb -U postgres backup
+/usr/local/bin/createdb -U postgres backup

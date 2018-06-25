@@ -10,13 +10,13 @@ fi
 NEW_ID=$(terraform state show tls_self_signed_cert.self-signed | grep -e '^id' | awk '{print $3}')
 if [ -z "$NEW_ID" ]; then
   fail-message "Resource named 'self-signed' was not found in the state"
-  # exit 1
+  exit 1
 fi
 
 OLD_ID=$(cat /tmp/id)
 if [ "$OLD_ID" != "$NEW_ID" ]; then
   fail-message "The resource was not moved in the terraform state, but recreated"
-  # exit 1
+  exit 1
 fi
 
 exit 0
