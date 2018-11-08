@@ -1,16 +1,13 @@
-template: containers
-configuration:
-  Containers:
-  - Image: gcr.io/instruqt/terraform:arcade
-    Name: terraform
-    Resources:
-      Memory: 128
-    Shell: /bin/bash
-  - Image: postgres:9.6-alpine
-    Name: postgres
-    Ports:
-      - 5432
-    Environment:
-      POSTGRES_PASSWORD: notsecure
-    Resources:
-      Memory: 128
+version: "2"
+containers:
+- name: terraform
+  image: gcr.io/instruqt/terraform:arcade
+  shell: /bin/bash
+  memory: 128
+- name: postgres
+  image: postgres:9.6-alpine
+  ports:
+  - 5432
+  environment:
+    POSTGRES_PASSWORD: notsecure
+  memory: 128
