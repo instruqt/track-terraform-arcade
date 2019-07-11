@@ -1,5 +1,5 @@
 slug: terraform-arcade
-id: gn55kw4m6g
+id: 1byxwuicwxm3
 type: arcade
 title: Terraform
 teaser: Do you know Terraform in and out?
@@ -12,18 +12,15 @@ tags:
 - HashiCorp
 - Terraform
 - arcade
-owner: hashicorp
+owner: instruqt
 developers:
-- jackson.nic@gmail.com
-- anubhav9mishra@gmail.com
-- erik@instruqt.com
+- niels@instruqt.com
 - ade@instruqt.com
-- geoffrey@hashicorp.com
-private: false
+private: true
 published: true
 challenges:
 - slug: initialization
-  id: d8eea5l66d
+  id: yf5zpeqycccq
   type: challenge
   title: Initialization
   teaser: Initialization
@@ -53,7 +50,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: planning-ahead
-  id: v344q8azjd
+  id: rsejfsaqo4b8
   type: challenge
   title: Planning ahead
   teaser: Planning ahead
@@ -72,7 +69,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: apply
-  id: wxqqp4239d
+  id: tlaxqs5vyylh
   type: challenge
   title: Creating infrastructure
   teaser: Initialize and apply
@@ -90,7 +87,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: adding-resources
-  id: veeez89jqv
+  id: f1v4awgqp6yb
   type: challenge
   title: Add another resource
   teaser: Add another resource
@@ -123,7 +120,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: workspace
-  id: wbllae98bv
+  id: qeyfqlcilvf9
   type: challenge
   title: Switching workspaces
   teaser: Create a workspaces with its own state
@@ -151,7 +148,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: import
-  id: vzoore7n4d
+  id: omylzobxgbpm
   type: challenge
   title: Importing resources
   teaser: Import existing resources
@@ -178,7 +175,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: taint
-  id: w9nn4lbxkd
+  id: pskl5rtctjd3
   type: challenge
   title: Tainting resources
   teaser: Mark existing resources for destruction
@@ -197,7 +194,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: state
-  id: wyooq36e8d
+  id: ewuwolnst4nv
   type: challenge
   title: Manipulating state
   teaser: Manipulate the state
@@ -218,7 +215,7 @@ challenges:
   difficulty: basic
   timelimit: 300
 - slug: validate
-  id: vo99zqn3zv
+  id: vewijoikn3wt
   type: challenge
   title: Validating code
   teaser: Validate terraform code
@@ -238,4 +235,4 @@ challenges:
     hostname: terraform
   difficulty: basic
   timelimit: 300
-checksum: "17852778904813423528"
+checksum: "14441440440074316563"
